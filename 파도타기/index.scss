@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+$base-color: #a3d7ff;
+
+@mixin animation-delay($time){
+  animation-delay: $time/10 + s;
+}
+
+.wave span {
+  display: inline-block;
+  font-family: 'Nanum Gothic';
+  color: $base-color;
+  font-weight: bold;
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}){
+      @include animation-delay($i);
+    }
+  }
+}
+
+@keyframes wave {
+  from, to {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+
+  from {
+    color: $base-color;
+  }
+  20% {
+    color: darken($base-color, 10%);
+  }
+  40% {
+    color: darken($base-color, 20%);
+  }
+  60% {
+    color: darken($base-color, 30%);
+  }
+  80% {
+    color: darken($base-color, 20%);
+  }
+  to {
+    color: darken($base-color, 10%);
+  }
+}
