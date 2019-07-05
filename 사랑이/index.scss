@@ -1,0 +1,129 @@
+$black-color: #000;
+$pink-color: #fbe4f0;
+$red-color: #f9a8d2;
+$white-color: #fff;
+
+$face-size: 300px;
+$heart-size: 20px;
+$text-size: 76px;
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $pink-color;
+}
+
+.face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $face-size;
+  height: $face-size;
+  margin-top: -$face-size/2;
+  margin-left: -$face-size/2;
+  border-radius: 50%;
+  background-color: $white-color;
+}
+
+.eye {
+  position: absolute;
+  top: 160px;
+  width: 12px;
+  height: 12px;
+  background-color: $black-color;
+  border-radius: 50%;
+
+  &.left {
+    left: 120px;
+  }
+
+  &.right {
+    right: 120px;
+  }
+}
+
+.nose {
+  position: absolute;
+  top: 190px;
+  left: 135px;
+  width: 30px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: $black-color;
+}
+
+.cheek {
+  display: none;
+  position: absolute;
+  top: 180px;
+  width: 40px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: $pink-color;
+
+  &.left {
+    left: 40px;
+  }
+
+  &.right {
+    right: 40px;
+  }
+}
+
+.heart {
+  display: none;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: $heart-size;
+  height: $heart-size;
+  margin-left: -$heart-size/2;
+  background-color: $red-color;
+  transform: rotate(-45deg);
+  animation-duration: 1s;
+  animation-name: jumping;
+  animation-iteration-count: infinite;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    background-color: $red-color;
+    border-radius: 50%;
+    width: $heart-size;
+    height: $heart-size;
+  }
+
+  &:before {
+    top: -$heart-size/2;
+  }
+
+  &:after {
+    left: $heart-size/2;
+  }
+}
+
+.text {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: $text-size;
+  margin-left: -$text-size/2;
+  color: $white-color;
+  text-align: center;
+  font-size: 14px;
+}
+
+@keyframes jumping {
+  from {
+    top: 22%;
+  }
+
+  to {
+    top: 18%;
+  }
+}
+
