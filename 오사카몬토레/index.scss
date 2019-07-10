@@ -1,0 +1,70 @@
+$base-color: #fff;
+$light-color: lighten($base-color, 20%);
+$dark-color: darken($base-color, 20%);
+$linear01: linear-gradient(to right, rgba($dark-color, .85), rgba($light-color, .95), rgba($dark-color, .9));
+$linear02: linear-gradient(to right, transparent 2%, $light-color, rgba($dark-color, .5), $light-color);
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.curtain {
+  width: 100%;
+  height: 100%;
+}
+
+.curtain-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.curtain-panel {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  z-index: 2;
+  transition: all 1s ease-out;
+  background-color: #fff;
+  background: $linear01, $linear02;
+  background-size: 67px 67px, 53px 53px;
+
+  &.left {
+    transform: translateX(-100%);
+  }
+
+  &.right {
+    transform: translateX(100%);
+  }
+}
+
+.panel {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  background: #1f2021;
+  text-align: center;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0;
+
+  &:checked {
+    &~.curtain-panel {
+      &.left {
+        transform: translateX(0);
+      }
+
+      &.right {
+        transform: translateX(0);
+      }
+    }
+  }
+}
