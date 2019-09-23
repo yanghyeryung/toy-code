@@ -1,0 +1,81 @@
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #272525; }
+
+.lamp-line {
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+  top: 0;
+  width: 10px;
+  height: 40px;
+  background: #0a0a0a; }
+
+.lamp {
+  position: absolute;
+  left: 50%;
+  margin-left: -65px;
+  top: 40px;
+  border-bottom: 60px solid #0a0a0a;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  height: 0;
+  width: 50px;
+  cursor: pointer; }
+
+.lamp-bulb {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: 80px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f3e1; }
+
+.lamp-light {
+  display: none;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: 80px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 30px 60px 30px #f5f1c4, 0 50px 100px 60px #eceac9, 0 70px 140px 90px #f5f3e0; }
+
+.bug {
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: 8px;
+  background: #2b0f01;
+  border-radius: 50%;
+  animation-name: run;
+  animation-duration: .5s; }
+
+@keyframes run {
+  from {
+    left: 35%;
+    top: 200px; }
+  20% {
+    left: 40%;
+    top: 200px; }
+  40% {
+    left: 45%;
+    top: 200px; }
+  60% {
+    left: 50%;
+    top: 160px; }
+  80% {
+    left: 55%;
+    top: 140px; }
+  to {
+    left: 60%;
+    top: 120px; } }
+
+/*# sourceMappingURL=index.css.map */
